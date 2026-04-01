@@ -10,27 +10,28 @@
 <style>
   @font-face {
     font-family: 'Kalpana';
-    src: url('./Kalpana UNICODE.ttf') format('truetype');
+    src: url('Kalpana%20UNICODE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body { background: #c8c0b4; font-family: 'IM Fell English', serif; color: #111; }
+  body { background: #bbb; font-family: 'IM Fell English', serif; color: #111; }
 
-  /* ── A4 page ─────────────────────────────── */
+  /* ── A4 page shell ────────────────────────────── */
   .page {
     width: 210mm;
     min-height: 297mm;
     background: #fff;
     margin: 16px auto;
     position: relative;
-    overflow: hidden;
   }
 
   @media print {
     @page { size: A4; margin: 0; }
-    body { background: #fff; }
-    .page {
+    body   { background: #fff; }
+    .page  {
       margin: 0;
       width: 210mm;
       height: 297mm;
@@ -40,117 +41,127 @@
     .page:last-child { page-break-after: auto; }
   }
 
-  /* ════════════════════════════════════════════
-     PAGE 1 – COVER
-  ════════════════════════════════════════════ */
+  /* ═══════════════════════════════════════════════
+     PAGE 1 – BENGALI COVER
+  ═══════════════════════════════════════════════ */
   .page-1 {
+    padding: 14mm 10mm 14mm 10mm;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 14mm 18mm;
+    justify-content: flex-start;
   }
 
-  /* Quarter-circle arc – top right of page */
-  .page-1::after {
-    content: '';
+  /* Address panel – flush left, overlapping card border */
+  .p1-addr {
     position: absolute;
-    top: 8mm; right: 8mm;
-    width: 32mm; height: 32mm;
-    border-bottom-left-radius: 100%;
-    border-bottom: 1.5px solid #111;
-    border-left:   1.5px solid #111;
-    pointer-events: none;
-  }
-
-  /* Recipient address rectangle – left side */
-  .p1-addr-box {
-    position: absolute;
-    top: 55mm; left: 0;
-    width: 36mm; height: 65mm;
+    top: 60mm;
+    left: 0;
+    width: 35mm;
+    height: 65mm;
     border: 1.5px solid #111;
     border-left: none;
+    background: #fff;
+    z-index: 2;
   }
 
-  /* All centred content */
-  .p1-inner {
+  /* Main bordered card */
+  .p1-card {
+    border: 1.5px solid #111;
+    width: 100%;
+    padding: 12mm 14mm 14mm;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 100%;
-    margin-top: 4mm;
+    margin-top: 10mm;
   }
 
-  /* Auspicious symbol – large decorative glyph */
-  .p1-symbol {
-    font-size: 80px;
+  /* Quarter-circle arc – top-right inside card */
+  .p1-card::after {
+    content: '';
+    position: absolute;
+    top: -1px; right: -1px;
+    width: 28mm; height: 28mm;
+    border-bottom-left-radius: 100%;
+    border-bottom: 1.5px solid #111;
+    border-left:   1.5px solid #111;
+    background: #fff;
+    z-index: 1;
+  }
+
+  /* Auspicious symbol */
+  .p1-sym {
+    font-size: 64px;
     line-height: 1;
+    margin-bottom: 2mm;
+    font-family: serif;
+  }
+  .p1-sym-dots {
+    font-size: 14px;
+    letter-spacing: 6px;
     margin-bottom: 6mm;
-    color: #111;
+    display: block;
   }
 
   .p1-bride {
     font-family: 'Kalpana', serif;
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 700;
-    color: #111;
-    line-height: 1.15;
-    margin-bottom: 5mm;
+    line-height: 1.2;
+    margin-bottom: 4mm;
   }
 
   .p1-garuda {
-    font-size: 52px;
-    line-height: 1;
-    margin: 2mm 0 5mm;
-    color: #111;
+    font-size: 46px;
+    margin: 2mm 0 4mm;
   }
 
   .p1-groom {
     font-family: 'Kalpana', serif;
-    font-size: 56px;
+    font-size: 52px;
     font-weight: 700;
-    color: #111;
-    line-height: 1.15;
-    margin-bottom: 12mm;
+    line-height: 1.2;
+    margin-bottom: 10mm;
   }
 
   .p1-hr {
     border: none;
     border-top: 1.5px solid #111;
     width: 100%;
-    margin: 2.5mm 0;
+    margin: 2mm 0;
   }
 
   .p1-poem {
     font-family: 'Kalpana', serif;
-    font-size: 20px;
-    color: #111;
+    font-size: 19px;
     line-height: 2.3;
-    margin-top: 10mm;
+    margin-top: 9mm;
     text-align: center;
   }
 
   .p1-attrib {
     font-family: 'Kalpana', serif;
     font-size: 18px;
-    font-weight: 600;
-    color: #111;
-    margin-top: 6mm;
+    font-weight: 700;
+    margin-top: 5mm;
     align-self: flex-end;
   }
 
-  /* ════════════════════════════════════════════
+  /* ═══════════════════════════════════════════════
      PAGE 2 – BENGALI DETAILS
-  ════════════════════════════════════════════ */
+  ═══════════════════════════════════════════════ */
   .page-2 {
+    padding: 10mm 11mm;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10mm 12mm;
   }
 
+  /* Small box above main card */
   .p-topbox {
-    width: 28mm; height: 16mm;
+    width: 28mm; height: 15mm;
     border: 1.5px solid #111;
     margin-bottom: 5mm;
     flex-shrink: 0;
@@ -159,15 +170,15 @@
   .p2-card {
     border: 1.5px solid #111;
     width: 100%;
-    padding: 8mm 10mm 8mm;
+    padding: 8mm 10mm 9mm;
     font-family: 'Kalpana', serif;
     color: #111;
     display: flex;
     flex-direction: column;
   }
 
-  /* Three-column intro */
-  .p2-intro {
+  /* ── 3-column header ── */
+  .p2-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -175,38 +186,40 @@
     line-height: 1.85;
     margin-bottom: 5mm;
   }
-  .p2-intro .c-side { flex: 1; }
-  .p2-intro .c-mid  { flex: 0.9; text-align: center; }
-  .p2-intro .c-right { text-align: right; }
-  .p2-parichiti { font-size: 15px; font-weight: 700; }
-  .p2-mid-sym   { font-size: 30px; margin-top: 3mm; }
+  .p2-hcol       { flex: 1; }
+  .p2-hcol-right { text-align: right; }
+  .p2-hcol-mid   { flex: 0.85; text-align: center; }
+  .p2-parichiti  { font-size: 15px; font-weight: 700; }
+  .p2-mid-sym    { font-size: 28px; margin-top: 3mm; }
 
-  /* Prajapati row with conch shells */
+  /* ── Prajapati row ── */
   .p2-praj-row {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5mm;
-    margin: 3mm 0;
+    margin: 2mm 0;
   }
   .p2-praj-text { font-size: 17px; font-weight: 700; }
-  .p2-conch     { font-size: 30px; }
+  .p2-conch     { font-size: 28px; filter: grayscale(1); }
 
-  .p2-butterfly { text-align: center; font-size: 20px; margin: 1mm 0 2mm; }
+  .p2-butterfly { text-align: center; font-size: 18px; margin: 1mm 0 3mm; filter: grayscale(1); }
 
   .p2-hridaya {
     text-align: center;
     font-size: 13px;
-    line-height: 2;
+    line-height: 2.1;
     margin-bottom: 4mm;
   }
 
+  /* ── Salutation ── */
   .p2-salutation {
     font-size: 13px;
     line-height: 1.8;
     margin-bottom: 4mm;
   }
 
+  /* ── Body ── */
   .p2-body {
     font-size: 13px;
     line-height: 1.95;
@@ -214,7 +227,8 @@
     margin-bottom: 3mm;
   }
 
-  .p2-sig-row {
+  /* ── Signature ── */
+  .p2-sig {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
@@ -222,34 +236,32 @@
     margin: 4mm 0 3mm;
   }
 
-  .p2-schedule-title {
+  /* ── Schedule ── */
+  .p2-sch-title {
     text-align: center;
     font-size: 16px;
     font-weight: 700;
-    margin: 3mm 0 3mm;
+    margin: 3mm 0;
   }
-
   .p2-event {
     font-size: 13px;
-    line-height: 2;
+    line-height: 2.1;
     text-align: left;
   }
-  .p2-event strong { font-weight: 700; }
-
   .p2-mobile {
     font-size: 13px;
     text-align: center;
     margin-top: 3mm;
   }
 
-  /* ════════════════════════════════════════════
+  /* ═══════════════════════════════════════════════
      PAGE 3 – ENGLISH
-  ════════════════════════════════════════════ */
+  ═══════════════════════════════════════════════ */
   .page-3 {
+    padding: 10mm 11mm;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10mm 12mm;
     font-family: 'IM Fell English', serif;
     color: #111;
   }
@@ -257,7 +269,7 @@
   .p3-card {
     border: 1.5px solid #111;
     width: 100%;
-    padding: 10mm 15mm;
+    padding: 10mm 14mm;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -269,9 +281,8 @@
   .p3-title {
     font-family: 'Great Vibes', cursive;
     font-size: 62px;
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 8mm;
-    color: #111;
   }
 
   .p3-intro {
@@ -289,44 +300,38 @@
     gap: 8mm;
     margin: 5mm 0;
   }
-
-  /* Drum image placeholder – rotated emoji approximation */
-  .p3-drum { font-size: 40px; }
+  .p3-drum { font-size: 40px; filter: grayscale(1); }
 
   .p3-bride {
     font-family: 'Great Vibes', cursive;
-    font-size: 54px;
+    font-size: 52px;
     display: block;
     line-height: 1.2;
-    color: #111;
   }
   .p3-with { font-style: italic; font-size: 17px; display: block; margin: 2mm 0; }
   .p3-groom {
     font-family: 'Great Vibes', cursive;
-    font-size: 54px;
+    font-size: 52px;
     display: block;
     line-height: 1.2;
-    color: #111;
   }
 
-  .p3-parentage { font-style: italic; font-size: 14px; margin: 6mm 0 3mm; }
-  .p3-date      { font-style: italic; font-size: 15px; margin-bottom: 6mm; }
+  .p3-parentage { font-style: italic; font-size: 14px; margin: 6mm 0 4mm; }
+  .p3-date      { font-style: italic; font-size: 15px; margin-bottom: 7mm; }
 
-  .p3-at          { font-size: 20px; margin-bottom: 2mm; }
-  .p3-venue-name  { font-size: 19px; font-weight: bold; letter-spacing: 2px; margin-bottom: 2mm; }
-  .p3-venue-addr  {
+  .p3-at         { font-size: 20px; margin-bottom: 2mm; }
+  .p3-venue-name { font-size: 19px; font-weight: bold; letter-spacing: 2px; margin-bottom: 2mm; }
+  .p3-venue-addr {
     font-family: 'Great Vibes', cursive;
-    font-size: 23px;
-    margin-bottom: 8mm;
-    color: #111;
+    font-size: 22px;
+    margin-bottom: 9mm;
   }
 
-  .p3-bottom-row {
+  .p3-bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    margin-top: 2mm;
   }
   .p3-rsvp { text-align: left; font-size: 14px; line-height: 1.8; }
   .p3-rsvp-label { font-family: 'Great Vibes', cursive; font-size: 24px; display: block; }
@@ -335,31 +340,35 @@
 </head>
 <body>
 
-<!-- ════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      PAGE 1 — Bengali Cover
-════════════════════════════════════════ -->
+═══════════════════════════════════════════════ -->
 <div class="page page-1">
-  <div class="p1-addr-box"></div>
 
-  <div class="p1-inner">
+  <!-- Address panel (overlaps left edge of card) -->
+  <div class="p1-addr"></div>
 
-    <!-- Auspicious symbol (Vedic / Om) -->
-    <div class="p1-symbol">ॐ</div>
+  <div class="p1-card">
+
+    <!-- Auspicious symbol -->
+    <div class="p1-sym">ॐ</div>
+    <span class="p1-sym-dots">| | | |</span>
 
     <div class="p1-bride">সুদেষ্ণা</div>
 
     <!-- Garuda / decorative bird between names -->
-    <div class="p1-garuda">𓅰</div>
+    <div class="p1-garuda">🦅</div>
 
     <div class="p1-groom">মনীশ</div>
 
     <hr class="p1-hr">
     <hr class="p1-hr">
 
+    <!-- Tagore poem -->
     <p class="p1-poem">
       "নতুন পথের যাত্রী দুটি<br>
       ছুটেছে কিসের সন্ধানে<br>
-      যোগ করে দাও, একত্র করে দাও,<br>
+      যোগ করে দাও, এক করে দাও,<br>
       হলদে সুতোর বন্ধনে।"
     </p>
     <div class="p1-attrib">রবীন্দ্রনাথ ঠাকুর</div>
@@ -368,27 +377,28 @@
 </div>
 
 
-<!-- ════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      PAGE 2 — Bengali Details
-════════════════════════════════════════ -->
+═══════════════════════════════════════════════ -->
 <div class="page page-2">
+
   <div class="p-topbox"></div>
 
   <div class="p2-card">
 
-    <!-- Three-column intro -->
-    <div class="p2-intro">
-      <div class="c-side">
+    <!-- Three-column family intro -->
+    <div class="p2-header">
+      <div class="p2-hcol">
         পাত্রী পক্ষ :<br>
         কল্যাণীয়া <strong>সুদেষ্ণা চক্রবর্তী</strong><br>
         পিতা : শ্রী আশিষ চক্রবর্তী<br>
         মাতা : স্বর্গীয়া মৌসুমী চক্রবর্তী
       </div>
-      <div class="c-mid">
+      <div class="p2-hcol-mid">
         <div class="p2-parichiti">।। পরিচিতি ।।</div>
         <div class="p2-mid-sym">𑁍</div>
       </div>
-      <div class="c-side c-right">
+      <div class="p2-hcol p2-hcol-right">
         পাত্র পক্ষ :<br>
         কল্যাণীয় <strong>মনীশ বর্মন</strong><br>
         পিতা : স্বর্গীয় সুরেশ বর্মন<br>
@@ -396,7 +406,7 @@
       </div>
     </div>
 
-    <!-- Prajapati + conches -->
+    <!-- Prajapati with conch shells -->
     <div class="p2-praj-row">
       <span class="p2-conch">🐚</span>
       <span class="p2-praj-text">।। শ্রী শ্রী প্রজাপতয়ে নমঃ ।।</span>
@@ -416,22 +426,22 @@
       &nbsp;&nbsp;&nbsp;&nbsp;মহাশয়/মহাশয়া
     </div>
 
-    <!-- Body paragraphs -->
+    <!-- Body paragraphs — exact match to PDF -->
     <div class="p2-body">
-      &emsp;প্রজাপতি ঋষির আশীর্বাদে মাঙ্গলিক সানাইয়ের সুরে সুর মিলিয়ে পবিত্র বেদমন্ত্র উচ্চারণের মধ্য দিয়ে দুটি সবুজ প্রাণ হলুদ সুতোর বন্ধনে আবদ্ধ হয়ে রাঙিন স্বপ্নকে পূর্ণ করে চলেছে।
+      &emsp;প্রজাপতি ঋষির আশির্বাদে মাঙ্গলিক সানাইয়ের সুরে সুর মিলিয়ে পবিত্র বেদমন্ত্র উচ্চারণের মধ্য দিয়ে দুটি সবুজ প্রাণ হলুদ সুতোর বন্ধনে আবদ্ধ হয়ে রাঙিন স্বপ্নকে পূরণ করে চলেছে।
     </div>
 
     <div class="p2-body">
-      &emsp;আগামী ১৯ শে বৈশাখ, ১৪৩৩ (ইং ৩ রা মে, ২০২৬) রবিবার আমাদের আদরের জ্যেষ্ঠা কন্যা কল্যাণীয়া <strong>সুদেষ্ণা</strong>-র সহিত কলিকাতা নিবাসিনী শ্রীমতা বিন্দু বর্মন-এর কনিষ্ঠ পুত্র কল্যাণীয় <strong>মনীশ</strong>-এর শুভ পরিণয়ে সুসম্পর্ক হইবে।
+      &emsp;আগামী ১৯ শে বৈশাখ, ১৪৩৩ (ইং ৩ রা মে, ২০২৬) রবিবার আমাদের আদরের জ্যেষ্ঠা কন্যা কল্যাণীয়া <strong>সুদেষ্ণা</strong> -র সহিত কলিকাতা নিবাসী শ্রীমতা বিন্দু বর্মন এর কনিষ্ঠ পুত্র কল্যাণীয় <strong>মনীশ</strong> -এর শুভ পরিণয় সুসম্পর্ক হইবে।
     </div>
 
     <div class="p2-body">
       &emsp;আপনার সপরিবারে সহৃদয় উপস্থিতি কামনা করি।<br>
-      &emsp;প্রচ্ছদারা নিমন্ত্রণের ত্রুটি মার্জনীয়।
+      &emsp;প্রচ্ছদারা নিমন্ত্রণের ফটি মার্জনীয়।
     </div>
 
-    <!-- Signature row -->
-    <div class="p2-sig-row">
+    <!-- Signature -->
+    <div class="p2-sig">
       <div>
         দক্ষিণাতিলর্ষী<br>
         অঞ্জন, রুমা, সুনয়না
@@ -443,7 +453,7 @@
     </div>
 
     <!-- Schedule -->
-    <div class="p2-schedule-title">।। অনুষ্ঠান সূচী ।।</div>
+    <div class="p2-sch-title">।। অনুষ্ঠান সূচী ।।</div>
 
     <div class="p2-event">
       <strong>নানহী মুখ :</strong> ১৮ ই বৈশাখ, ১৪৩৩ (ইং ২ রা মে, ২০২৬) শনিবার, সকাল ৯ ঘটিকায়
@@ -460,10 +470,11 @@
 </div>
 
 
-<!-- ════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      PAGE 3 — English
-════════════════════════════════════════ -->
+═══════════════════════════════════════════════ -->
 <div class="page page-3">
+
   <div class="p-topbox"></div>
 
   <div class="p3-card">
@@ -498,7 +509,7 @@
     <p class="p3-venue-name">" UNITED CLUB "</p>
     <p class="p3-venue-addr">C Road, Bistupur, Gate No. 5</p>
 
-    <div class="p3-bottom-row">
+    <div class="p3-bottom">
       <div class="p3-rsvp">
         <span class="p3-rsvp-label">R.S.V.P.:</span>
         7061188602
