@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Invitation - Sudeshna &amp; Manish</title>
+<title>Wedding Invitation – Sudeshna &amp; Manish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
@@ -11,436 +11,462 @@
   @font-face {
     font-family: 'Kalpana';
     src: url('./Kalpana UNICODE.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    background: #f0e6d0;
-    font-family: 'IM Fell English', serif;
-  }
+  body { background: #c8c0b4; font-family: 'IM Fell English', serif; color: #111; }
 
+  /* ── A4 page ─────────────────────────────── */
   .page {
     width: 210mm;
     min-height: 297mm;
-    margin: 0 auto 20px;
-    background: #fff9f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12mm;
+    background: #fff;
+    margin: 16px auto;
     position: relative;
+    overflow: hidden;
   }
 
-  .card {
-    border: 2px solid #8B6914;
-    padding: 10mm 12mm;
-    width: 100%;
-    min-height: 260mm;
+  @media print {
+    @page { size: A4; margin: 0; }
+    body { background: #fff; }
+    .page {
+      margin: 0;
+      width: 210mm;
+      height: 297mm;
+      page-break-after: always;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+  }
+
+  /* ════════════════════════════════════════════
+     PAGE 1 – COVER
+  ════════════════════════════════════════════ */
+  .page-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14mm 18mm;
+  }
+
+  /* Quarter-circle arc – top right of page */
+  .page-1::after {
+    content: '';
+    position: absolute;
+    top: 8mm; right: 8mm;
+    width: 32mm; height: 32mm;
+    border-bottom-left-radius: 100%;
+    border-bottom: 1.5px solid #111;
+    border-left:   1.5px solid #111;
+    pointer-events: none;
+  }
+
+  /* Recipient address rectangle – left side */
+  .p1-addr-box {
+    position: absolute;
+    top: 55mm; left: 0;
+    width: 36mm; height: 65mm;
+    border: 1.5px solid #111;
+    border-left: none;
+  }
+
+  /* All centred content */
+  .p1-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    position: relative;
-    background: #fffdf7;
-  }
-
-  /* ── PAGE 3 – ENGLISH ── */
-  .p3-ganesh {
-    font-size: 17px;
-    letter-spacing: 2px;
-    color: #5a3e10;
-    margin-bottom: 8px;
-  }
-
-  .p3-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 68px;
-    color: #8B1a1a;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
-
-  .p3-intro {
-    font-style: italic;
-    font-size: 17px;
-    color: #3a2a0a;
-    line-height: 1.8;
-    margin-bottom: 12px;
-  }
-
-  .p3-names {
-    margin: 8px 0;
-  }
-
-  .p3-bride {
-    font-family: 'Great Vibes', cursive;
-    font-size: 56px;
-    color: #8B1a1a;
-  }
-
-  .p3-with {
-    font-style: italic;
-    font-size: 19px;
-    color: #5a3e10;
-    margin: 2px 0;
-  }
-
-  .p3-groom {
-    font-family: 'Great Vibes', cursive;
-    font-size: 56px;
-    color: #8B1a1a;
-  }
-
-  .p3-parents {
-    font-style: italic;
-    font-size: 16px;
-    color: #3a2a0a;
-    margin: 8px 0;
-    line-height: 1.7;
-  }
-
-  .p3-date {
-    font-style: italic;
-    font-size: 17px;
-    color: #3a2a0a;
-    margin: 8px 0;
-  }
-
-  .p3-cross { font-size: 22px; color: #5a3e10; margin: 6px 0; }
-
-  .p3-venue-name {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #5a3e10;
-    margin: 4px 0;
-  }
-
-  .p3-venue-addr {
-    font-style: italic;
-    font-size: 17px;
-    color: #3a2a0a;
-    margin-bottom: 12px;
-  }
-
-  .p3-divider {
-    width: 60%;
-    border: none;
-    border-top: 1px solid #8B6914;
-    margin: 10px auto;
-  }
-
-  .p3-schedule {
-    font-style: italic;
-    font-size: 15px;
-    color: #3a2a0a;
-    line-height: 2.2;
-  }
-
-  .p3-rsvp-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     width: 100%;
-    margin-top: auto;
-    padding-top: 12px;
+    margin-top: 4mm;
   }
 
-  .p3-rsvp {
-    font-style: italic;
-    font-size: 15px;
-    color: #5a3e10;
-    text-align: left;
+  /* Auspicious symbol – large decorative glyph */
+  .p1-symbol {
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 6mm;
+    color: #111;
   }
 
-  .p3-rsvp .label {
-    font-family: 'Great Vibes', cursive;
-    font-size: 26px;
-    display: block;
+  .p1-bride {
+    font-family: 'Kalpana', serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.15;
+    margin-bottom: 5mm;
   }
 
-  /* shell decorations */
-  .shells-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin: 8px 0;
+  .p1-garuda {
+    font-size: 52px;
+    line-height: 1;
+    margin: 2mm 0 5mm;
+    color: #111;
   }
-  .shell { font-size: 32px; color: #8B6914; }
 
-  /* ── PAGE 1 – BENGALI COVER ── */
-  .p1-wrap {
+  .p1-groom {
+    font-family: 'Kalpana', serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.15;
+    margin-bottom: 12mm;
+  }
+
+  .p1-hr {
+    border: none;
+    border-top: 1.5px solid #111;
+    width: 100%;
+    margin: 2.5mm 0;
+  }
+
+  .p1-poem {
+    font-family: 'Kalpana', serif;
+    font-size: 20px;
+    color: #111;
+    line-height: 2.3;
+    margin-top: 10mm;
+    text-align: center;
+  }
+
+  .p1-attrib {
+    font-family: 'Kalpana', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+    margin-top: 6mm;
+    align-self: flex-end;
+  }
+
+  /* ════════════════════════════════════════════
+     PAGE 2 – BENGALI DETAILS
+  ════════════════════════════════════════════ */
+  .page-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 10mm 12mm;
+  }
+
+  .p-topbox {
+    width: 28mm; height: 16mm;
+    border: 1.5px solid #111;
+    margin-bottom: 5mm;
+    flex-shrink: 0;
+  }
+
+  .p2-card {
+    border: 1.5px solid #111;
     width: 100%;
-    height: 100%;
-    gap: 18px;
-  }
-
-  .p1-symbol {
-    font-size: 56px;
-    color: #5a3e10;
-    line-height: 1;
-  }
-
-  .p1-name {
+    padding: 8mm 10mm 8mm;
     font-family: 'Kalpana', serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: #8B1a1a;
-    line-height: 1.4;
+    color: #111;
+    display: flex;
+    flex-direction: column;
   }
 
-  .p1-bird { font-size: 36px; color: #5a3e10; }
-
-  .p1-name2 {
-    font-family: 'Kalpana', serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: #8B1a1a;
-  }
-
-  .p1-box {
-    border: 1.5px solid #8B6914;
-    padding: 16px 28px;
-    width: 85%;
-    margin-top: 10px;
-  }
-
-  .p1-quote {
-    font-family: 'Kalpana', serif;
-    font-size: 19px;
-    color: #3a2a0a;
-    line-height: 2.2;
-  }
-
-  .p1-author {
-    font-family: 'Kalpana', serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: #5a3e10;
-    margin-top: 10px;
-  }
-
-  /* ── PAGE 2 – BENGALI DETAILS ── */
-  .p2-wrap {
-    width: 100%;
-    font-family: 'Kalpana', serif;
-  }
-
-  .p2-header {
+  /* Three-column intro */
+  .p2-intro {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     font-size: 13px;
-    color: #3a2a0a;
-    line-height: 1.9;
-    margin-bottom: 6px;
+    line-height: 1.85;
+    margin-bottom: 5mm;
   }
+  .p2-intro .c-side { flex: 1; }
+  .p2-intro .c-mid  { flex: 0.9; text-align: center; }
+  .p2-intro .c-right { text-align: right; }
+  .p2-parichiti { font-size: 15px; font-weight: 700; }
+  .p2-mid-sym   { font-size: 30px; margin-top: 3mm; }
 
-  .p2-header .col { width: 40%; text-align: left; }
-  .p2-header .col:last-child { text-align: right; }
-  .p2-header .center-col { text-align: center; font-size: 15px; font-weight: 700; color: #8B1a1a; }
-
-  .p2-symbol-center { font-size: 30px; color: #5a3e10; margin: 3px 0; }
-
-  .p2-prajapati {
-    font-size: 17px;
-    font-weight: 700;
-    color: #8B1a1a;
-    margin: 4px 0;
-  }
-
-  .p2-shell-row {
+  /* Prajapati row with conch shells */
+  .p2-praj-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 4px 0;
+    justify-content: center;
+    gap: 5mm;
+    margin: 3mm 0;
+  }
+  .p2-praj-text { font-size: 17px; font-weight: 700; }
+  .p2-conch     { font-size: 30px; }
+
+  .p2-butterfly { text-align: center; font-size: 20px; margin: 1mm 0 2mm; }
+
+  .p2-hridaya {
+    text-align: center;
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 4mm;
   }
 
   .p2-salutation {
     font-size: 13px;
-    color: #3a2a0a;
     line-height: 1.8;
-    margin: 4px 0 6px;
-    align-self: flex-start;
+    margin-bottom: 4mm;
   }
 
   .p2-body {
     font-size: 13px;
-    color: #3a2a0a;
     line-height: 1.95;
     text-align: justify;
-    margin: 5px 0;
+    margin-bottom: 3mm;
   }
 
   .p2-sig-row {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     font-size: 13px;
-    color: #5a3e10;
-    margin: 6px 0 4px;
-    width: 100%;
+    line-height: 1.8;
+    margin: 4mm 0 3mm;
   }
 
-  .p2-schedule {
-    margin-top: 6px;
-    font-size: 13px;
-    color: #3a2a0a;
-    line-height: 2.1;
+  .p2-schedule-title {
     text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 3mm 0 3mm;
   }
 
-  .p2-schedule .bold { font-weight: 700; color: #8B1a1a; }
+  .p2-event {
+    font-size: 13px;
+    line-height: 2;
+    text-align: left;
+  }
+  .p2-event strong { font-weight: 700; }
 
   .p2-mobile {
-    text-align: center;
     font-size: 13px;
-    color: #3a2a0a;
-    margin-top: 4px;
+    text-align: center;
+    margin-top: 3mm;
   }
 
-  /* ── PRINT ── */
-  @media print {
-    body { background: none; }
-    .page {
-      margin: 0;
-      page-break-after: always;
-      width: 210mm;
-      min-height: 297mm;
-    }
-    .page:last-child { page-break-after: auto; }
+  /* ════════════════════════════════════════════
+     PAGE 3 – ENGLISH
+  ════════════════════════════════════════════ */
+  .page-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10mm 12mm;
+    font-family: 'IM Fell English', serif;
+    color: #111;
   }
+
+  .p3-card {
+    border: 1.5px solid #111;
+    width: 100%;
+    padding: 10mm 15mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .p3-ganesh { font-size: 15px; letter-spacing: 1.5px; margin-bottom: 6mm; }
+
+  .p3-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 62px;
+    line-height: 1;
+    margin-bottom: 8mm;
+    color: #111;
+  }
+
+  .p3-intro {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 8mm;
+  }
+  .p3-ceremony { font-family: 'Great Vibes', cursive; font-size: 19px; font-style: normal; }
+
+  .p3-names-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8mm;
+    margin: 5mm 0;
+  }
+
+  /* Drum image placeholder – rotated emoji approximation */
+  .p3-drum { font-size: 40px; }
+
+  .p3-bride {
+    font-family: 'Great Vibes', cursive;
+    font-size: 54px;
+    display: block;
+    line-height: 1.2;
+    color: #111;
+  }
+  .p3-with { font-style: italic; font-size: 17px; display: block; margin: 2mm 0; }
+  .p3-groom {
+    font-family: 'Great Vibes', cursive;
+    font-size: 54px;
+    display: block;
+    line-height: 1.2;
+    color: #111;
+  }
+
+  .p3-parentage { font-style: italic; font-size: 14px; margin: 6mm 0 3mm; }
+  .p3-date      { font-style: italic; font-size: 15px; margin-bottom: 6mm; }
+
+  .p3-at          { font-size: 20px; margin-bottom: 2mm; }
+  .p3-venue-name  { font-size: 19px; font-weight: bold; letter-spacing: 2px; margin-bottom: 2mm; }
+  .p3-venue-addr  {
+    font-family: 'Great Vibes', cursive;
+    font-size: 23px;
+    margin-bottom: 8mm;
+    color: #111;
+  }
+
+  .p3-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 2mm;
+  }
+  .p3-rsvp { text-align: left; font-size: 14px; line-height: 1.8; }
+  .p3-rsvp-label { font-family: 'Great Vibes', cursive; font-size: 24px; display: block; }
+  .p3-events { font-size: 13.5px; line-height: 2.1; text-align: left; }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
+<!-- ════════════════════════════════════════
      PAGE 1 — Bengali Cover
-═══════════════════════════════════════════ -->
-<div class="page">
-  <div class="card">
-    <div class="p1-wrap">
+════════════════════════════════════════ -->
+<div class="page page-1">
+  <div class="p1-addr-box"></div>
 
-      <div class="p1-symbol">𑁍<br><span style="font-size:22px;letter-spacing:4px;">✦ ✦ ✦ ✦</span></div>
+  <div class="p1-inner">
 
-      <div class="p1-name">সুদেষ্ণা</div>
+    <!-- Auspicious symbol (Vedic / Om) -->
+    <div class="p1-symbol">ॐ</div>
 
-      <div class="p1-bird">🦅</div>
+    <div class="p1-bride">সুদেষ্ণা</div>
 
-      <div class="p1-name2">মনীশ</div>
+    <!-- Garuda / decorative bird between names -->
+    <div class="p1-garuda">𓅰</div>
 
-      <hr style="width:55%;border:1px solid #8B6914;margin:8px 0;">
-      <hr style="width:55%;border:1px solid #8B6914;margin:0 0 12px;">
+    <div class="p1-groom">মনীশ</div>
 
-      <div class="p1-box">
-        <div class="p1-quote">
-          "নতুন পথের যাত্রী দুটি<br>
-          ছুটেছে কিসের সন্ধানে<br>
-          যোগ করে দাও, একত্র করে দাও,<br>
-          হলদে সুতোর বন্ধনে।"
-        </div>
-        <div class="p1-author">রবীন্দ্রনাথ ঠাকুর</div>
-      </div>
+    <hr class="p1-hr">
+    <hr class="p1-hr">
 
-    </div>
+    <p class="p1-poem">
+      "নতুন পথের যাত্রী দুটি<br>
+      ছুটেছে কিসের সন্ধানে<br>
+      যোগ করে দাও, একত্র করে দাও,<br>
+      হলদে সুতোর বন্ধনে।"
+    </p>
+    <div class="p1-attrib">রবীন্দ্রনাথ ঠাকুর</div>
+
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
+
+<!-- ════════════════════════════════════════
      PAGE 2 — Bengali Details
-═══════════════════════════════════════════ -->
-<div class="page">
-  <div class="card">
-    <div class="p2-wrap">
+════════════════════════════════════════ -->
+<div class="page page-2">
+  <div class="p-topbox"></div>
 
-      <div class="p2-header">
-        <div class="col">
-          <strong>পাত্রী পক্ষ :</strong><br>
-          কল্যাণীয়া <strong>সুদেষ্ণা চক্রবর্তী</strong><br>
-          পিতা : শ্রী আশিষ চক্রবর্তী<br>
-          মাতা : স্বর্গীয়া মৌসুমী চক্রবর্তী
-        </div>
-        <div class="col center-col">
-          <div>।। পরিচিতি ।।</div>
-          <div class="p2-symbol-center">✦</div>
-        </div>
-        <div class="col" style="text-align:right">
-          <strong>পাত্র পক্ষ :</strong><br>
-          কল্যাণীয় <strong>মনীশ বর্মন</strong><br>
-          পিতা : স্বর্গীয় সুরেশ বর্মন<br>
-          মাতা : শ্রীমতা বিন্দু বর্মন
-        </div>
+  <div class="p2-card">
+
+    <!-- Three-column intro -->
+    <div class="p2-intro">
+      <div class="c-side">
+        পাত্রী পক্ষ :<br>
+        কল্যাণীয়া <strong>সুদেষ্ণা চক্রবর্তী</strong><br>
+        পিতা : শ্রী আশিষ চক্রবর্তী<br>
+        মাতা : স্বর্গীয়া মৌসুমী চক্রবর্তী
       </div>
-
-      <div class="p2-shell-row">
-        <span class="shell">🐚</span>
-        <div class="p2-prajapati">।। শ্রী শ্রী প্রজাপতয়ে নমঃ ।।<br>
-          <span style="font-size:22px;">🦋</span>
-        </div>
-        <span class="shell">🐚</span>
+      <div class="c-mid">
+        <div class="p2-parichiti">।। পরিচিতি ।।</div>
+        <div class="p2-mid-sym">𑁍</div>
       </div>
-
-      <div style="text-align:center;font-family:'Kalpana',serif;font-size:13px;color:#5a3e10;margin:4px 0;">
-        ।। যদিদং হৃদয়ং মম ।।<br>
-        ।। তদিদং হৃদয়ং তব ।।
+      <div class="c-side c-right">
+        পাত্র পক্ষ :<br>
+        কল্যাণীয় <strong>মনীশ বর্মন</strong><br>
+        পিতা : স্বর্গীয় সুরেশ বর্মন<br>
+        মাতা : শ্রীমতা বিন্দু বর্মন
       </div>
-
-      <div class="p2-salutation">
-        সবিনয় নিবেদন,<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;মহাশয়/মহাশয়া
-      </div>
-
-      <div class="p2-body">
-        &nbsp;&nbsp;&nbsp;&nbsp;প্রজাপতি ঋষির আশীর্বাদে মাঙ্গলিক সানাইয়ের সুরে সুর মিলিয়ে পবিত্র বেদমন্ত্র উচ্চারণের মধ্য দিয়ে দুটি সবুজ প্রাণ হলুদ সুতোর বন্ধনে আবদ্ধ হয়ে রাঙিন স্বপ্নকে পূর্ণ করে চলেছে।
-      </div>
-
-      <div class="p2-body">
-        &nbsp;&nbsp;&nbsp;&nbsp;আগামী ১৯ শে বৈশাখ, ১৪৩৩ (ইং ৩ রা মে, ২০২৬) রবিবার আমাদের আদরের জ্যেষ্ঠা কন্যা কল্যাণীয়া <strong>সুদেষ্ণা</strong>-র সহিত কলিকাতা নিবাসিনী শ্রীমতা বিন্দু বর্মন এর কনিষ্ঠ পুত্র কল্যাণীয় <strong>মনীশ</strong>-এর শুভ পরিণয়ে সুসম্পর্ক হইবে।
-      </div>
-
-      <div class="p2-body">
-        &nbsp;&nbsp;&nbsp;&nbsp;আপনার সপরিবারে সহৃদয় উপস্থিতি কামনা করি।<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;প্রচ্ছদারা নিমন্ত্রণের ত্রুটি মার্জনীয়।
-      </div>
-
-      <div class="p2-sig-row">
-        <div>
-          দক্ষিণাতিলর্ষী<br>
-          অঞ্জন, রুমা, সুনয়না
-        </div>
-        <div style="text-align:right;">
-          ইতি – বিনীত<br>
-          শ্রী আশিষ চক্রবর্তী
-        </div>
-      </div>
-
-      <hr style="width:100%;border:1px solid #8B6914;margin:6px 0;">
-
-      <div class="p2-schedule">
-        <span class="bold">নানহী মুখ :</span> ১৮ ই বৈশাখ, ১৪৩৩ (ইং ২ রা মে, ২০২৬) শনিবার, সকাল ৯ ঘটিকায়<br>
-        <span class="bold">সঙ্গীত সন্ধ্যা :</span> ১৮ ই বৈশাখ, ১৪৩৩ (ইং ২ রা মে, ২০২৬) শনিবার, সন্ধ্যা ৮ ঘটিকায়<br>
-        <span class="bold">স্থান :</span> ইউনাইটেড ক্লাব, সি রোড, বিষ্টুপুর, গেট নং ৫, জামশেদপুর
-      </div>
-
-      <div class="p2-mobile">মোবাইল : 7061188602</div>
-
     </div>
+
+    <!-- Prajapati + conches -->
+    <div class="p2-praj-row">
+      <span class="p2-conch">🐚</span>
+      <span class="p2-praj-text">।। শ্রী শ্রী প্রজাপতয়ে নমঃ ।।</span>
+      <span class="p2-conch">🐚</span>
+    </div>
+
+    <div class="p2-butterfly">🦋</div>
+
+    <div class="p2-hridaya">
+      ।। যদিদং হৃদয়ং মম ।।<br>
+      ।। তদিদং হৃদয়ং তব ।।
+    </div>
+
+    <!-- Salutation -->
+    <div class="p2-salutation">
+      সবিনয় নিবেদন,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;মহাশয়/মহাশয়া
+    </div>
+
+    <!-- Body paragraphs -->
+    <div class="p2-body">
+      &emsp;প্রজাপতি ঋষির আশীর্বাদে মাঙ্গলিক সানাইয়ের সুরে সুর মিলিয়ে পবিত্র বেদমন্ত্র উচ্চারণের মধ্য দিয়ে দুটি সবুজ প্রাণ হলুদ সুতোর বন্ধনে আবদ্ধ হয়ে রাঙিন স্বপ্নকে পূর্ণ করে চলেছে।
+    </div>
+
+    <div class="p2-body">
+      &emsp;আগামী ১৯ শে বৈশাখ, ১৪৩৩ (ইং ৩ রা মে, ২০২৬) রবিবার আমাদের আদরের জ্যেষ্ঠা কন্যা কল্যাণীয়া <strong>সুদেষ্ণা</strong>-র সহিত কলিকাতা নিবাসিনী শ্রীমতা বিন্দু বর্মন-এর কনিষ্ঠ পুত্র কল্যাণীয় <strong>মনীশ</strong>-এর শুভ পরিণয়ে সুসম্পর্ক হইবে।
+    </div>
+
+    <div class="p2-body">
+      &emsp;আপনার সপরিবারে সহৃদয় উপস্থিতি কামনা করি।<br>
+      &emsp;প্রচ্ছদারা নিমন্ত্রণের ত্রুটি মার্জনীয়।
+    </div>
+
+    <!-- Signature row -->
+    <div class="p2-sig-row">
+      <div>
+        দক্ষিণাতিলর্ষী<br>
+        অঞ্জন, রুমা, সুনয়না
+      </div>
+      <div style="text-align:right;">
+        ইতি – বিনীত<br>
+        শ্রী আশিষ চক্রবর্তী
+      </div>
+    </div>
+
+    <!-- Schedule -->
+    <div class="p2-schedule-title">।। অনুষ্ঠান সূচী ।।</div>
+
+    <div class="p2-event">
+      <strong>নানহী মুখ :</strong> ১৮ ই বৈশাখ, ১৪৩৩ (ইং ২ রা মে, ২০২৬) শনিবার, সকাল ৯ ঘটিকায়
+    </div>
+    <div class="p2-event">
+      <strong>সঙ্গীত সন্ধ্যা :</strong> ১৮ ই বৈশাখ, ১৪৩৩ (ইং ২ রা মে, ২০২৬) শনিবার, সন্ধ্যা ৮ ঘটিকায়
+    </div>
+    <div class="p2-event">
+      <strong>স্থান :</strong> ইউনাইটেড ক্লাব, সি রোড, বিষ্টুপুর, গেট নং ৫, জামশেদপুর
+    </div>
+    <div class="p2-mobile">মোবাইল : 7061188602</div>
+
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
+
+<!-- ════════════════════════════════════════
      PAGE 3 — English
-═══════════════════════════════════════════ -->
-<div class="page">
-  <div class="card">
+════════════════════════════════════════ -->
+<div class="page page-3">
+  <div class="p-topbox"></div>
+
+  <div class="p3-card">
 
     <p class="p3-ganesh">!! Shree Ganeshay Namah !!</p>
 
@@ -448,43 +474,40 @@
 
     <p class="p3-intro">
       <em>Mr. Ashish Chakrabory &amp; Mrs. Ruma Chakraborty</em><br>
-      request the pleasure of your gracious presence on the auspicious<br>
-      occasion of the <span style="font-family:'Great Vibes',cursive;font-size:22px;">Wedding Ceremony</span> of their elder daughter
+      <em>request the pleasure of your gracious presence on the auspicious</em><br>
+      <em>occasion of the <span class="p3-ceremony">Wedding Ceremony</span> of their elder daughter</em>
     </p>
 
-    <div class="shells-row">
-      <span class="shell">🐚</span>
-      <div class="p3-names">
-        <div class="p3-bride">Sudeshna</div>
-        <div class="p3-with">with</div>
-        <div class="p3-groom">Manish</div>
+    <div class="p3-names-row">
+      <span class="p3-drum">🥁</span>
+      <div>
+        <span class="p3-bride">Sudeshna</span>
+        <span class="p3-with">with</span>
+        <span class="p3-groom">Manish</span>
       </div>
-      <span class="shell">🐚</span>
+      <span class="p3-drum">🥁</span>
     </div>
 
-    <p class="p3-parents">
+    <p class="p3-parentage">
       <em>(Younger son of Late Suresh Barman &amp; Smt. Bindu Barma)</em>
     </p>
 
     <p class="p3-date"><em>to be held on Sunday, 5th May 2026</em></p>
 
-    <p class="p3-cross">✦ At ✦</p>
+    <p class="p3-at">✦ At ✦</p>
     <p class="p3-venue-name">" UNITED CLUB "</p>
-    <p class="p3-venue-addr"><em>C Road, Bistupur, Gate No. 5</em></p>
+    <p class="p3-venue-addr">C Road, Bistupur, Gate No. 5</p>
 
-    <hr class="p3-divider">
-
-    <div class="p3-schedule">
-      Briddhi : 2nd May, 7:00 a.m. followed by Lunch<br>
-      Sangeet : 2nd May, 7:00 p.m. followed by Snacks<br>
-      Haldi &nbsp;&nbsp;: 3rd May, 8:00 a.m. followed by Lunch<br>
-      Wedding : 3rd May, 6:00 p.m. followed by dinner
-    </div>
-
-    <div class="p3-rsvp-row">
+    <div class="p3-bottom-row">
       <div class="p3-rsvp">
-        <span class="label">R.S.V.P.:</span>
+        <span class="p3-rsvp-label">R.S.V.P.:</span>
         7061188602
+      </div>
+      <div class="p3-events">
+        Briddhi &nbsp;: 2nd May, 7:00 a.m. followed by Lunch<br>
+        Sangeet &nbsp;: 2nd May, 7:00 p.m. followed by Snacks<br>
+        Haldi &nbsp;&nbsp;&nbsp;: 3rd May, 8:00 a.m. followed by Lunch<br>
+        Wedding : 3rd May, 6:00 p.m. followed by dinner
       </div>
     </div>
 
