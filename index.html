@@ -85,8 +85,8 @@
     z-index: 1;
   }
 
-  .p1-sym      { font-size: 64px; line-height: 1; margin-bottom: 2mm; font-family: serif; }
-  .p1-sym-dots { font-size: 14px; letter-spacing: 6px; margin-bottom: 6mm; display: block; }
+  .p1-sym      { font-size: 64px; line-height: 1; margin-bottom: 2mm; font-family: 'Kalpana', serif; }
+  .p1-sym-dots { font-size: 14px; letter-spacing: 6px; margin-bottom: 6mm; display: block; font-family: 'Kalpana', serif; }
 
   .p1-bride {
     font-family: 'Kalpana', serif;
@@ -94,7 +94,7 @@
     line-height: 1.2; margin-bottom: 4mm;
   }
 
-  .p1-sep { font-size: 15px; letter-spacing: 8px; margin: 3mm 0 5mm; color: #555; }
+  .p1-sep { font-size: 15px; letter-spacing: 8px; margin: 3mm 0 5mm; color: #555; font-family: 'Kalpana', serif; }
 
   .p1-groom {
     font-family: 'Kalpana', serif;
@@ -170,6 +170,7 @@
     letter-spacing: 4px;
     margin: 1mm 0 3mm;
     color: #555;
+    font-family: 'Kalpana', serif;
   }
 
   .p2-hridaya {
@@ -198,7 +199,7 @@
     margin: 3mm 0;
   }
   .p2-event { font-size: 13px; line-height: 2.1; text-align: left; }
-  .p2-mobile { font-size: 13px; text-align: center; margin-top: 3mm; }
+  .p2-mobile { font-size: 13px; text-align: center; margin-top: 3mm; font-family: 'Kalpana', serif; }
 
   /* ═══════════════════════════════
      PAGE 3 – ENGLISH (narrative)
@@ -258,25 +259,24 @@
   .p3-ceremony { font-family: 'Great Vibes', cursive; font-size: 18px; font-style: normal; }
 
   .p3-events-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1mm 10mm;
-    font-size: 13px; line-height: 2;
+    font-size: 14px; line-height: 2.2;
     margin: 4mm 0;
-    text-align: left;
+    text-align: center;
+    font-style: italic;
   }
+  .p3-events-grid strong { font-style: normal; }
 
   .p3-venue-label {
     font-style: italic; font-weight: bold;
     font-size: 15px; margin: 5mm 0 2mm;
   }
   .p3-venue-name {
-    font-size: 18px; font-weight: bold;
-    letter-spacing: 2px; margin-bottom: 2mm;
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px; margin-bottom: 1mm;
   }
   .p3-venue-addr {
-    font-family: 'Great Vibes', cursive;
-    font-size: 21px; margin-bottom: 6mm;
+    font-style: italic; font-size: 14px;
+    margin-bottom: 6mm;
   }
 
   .p3-hosts {
@@ -448,7 +448,7 @@
     <div class="p3-name">Manish</div>
 
     <p class="p3-parentage">
-      <em>(s/o. Late Suresh Barman &amp; Smt. Bindu Barma)</em>
+      <em>(s/o. Late Suresh Barman &amp; Smt. Bindu Barman)</em>
     </p>
 
     <p class="p3-invite">
@@ -458,10 +458,8 @@
     </p>
 
     <div class="p3-events-grid">
-      <div><strong>Briddhi :</strong> 2nd May, 7:00 a.m.</div>
-      <div><strong>Sangeet :</strong> 2nd May, 7:00 p.m.</div>
-      <div><strong>Haldi :</strong> 3rd May, 8:00 a.m.</div>
-      <div><strong>Wedding :</strong> 3rd May, 6:00 p.m.</div>
+      <strong>Briddhi :</strong> 2nd May, 10:00 a.m. &nbsp;&nbsp;&nbsp; <strong>Sangeet :</strong> 2nd May, 7:00 p.m.<br>
+      <strong>Haldi :</strong> 3rd May, 8:00 a.m. &nbsp;&nbsp;&nbsp; <strong>Wedding :</strong> 3rd May, 6:00 p.m.
     </div>
 
     <p class="p3-venue-label">-: Venue :-</p>
