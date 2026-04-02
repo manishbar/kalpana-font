@@ -20,20 +20,20 @@
   body { background: #bbb; font-family: 'IM Fell English', serif; color: #111; }
 
   .page {
-    width: 210mm;
-    min-height: 297mm;
+    width: 8in;
+    min-height: 8in;
     background: #fff;
     margin: 16px auto;
     position: relative;
   }
 
   @media print {
-    @page { size: A4; margin: 0; }
+    @page { size: 8in 8in; margin: 0; }
     body  { background: #fff; }
     .page {
       margin: 0;
-      width: 210mm;
-      height: 297mm;
+      width: 8in;
+      height: 8in;
       page-break-after: always;
       overflow: hidden;
     }
@@ -205,7 +205,7 @@
      PAGE 3 – ENGLISH (narrative)
   ═══════════════════════════════ */
   .page-3 {
-    padding: 10mm 12mm;
+    padding: 7mm 6mm;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,91 +216,91 @@
   .p3-card {
     border: 1.5px solid #111;
     width: 100%;
-    padding: 10mm 16mm 12mm;
+    padding: 8mm 10mm 10mm;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  /* all body text: IM Fell English italic, 13.5px */
+  /* all body text: IM Fell English italic */
   .p3-card p, .p3-card div:not(.p3-title):not(.p3-name):not(.p3-venue-name) {
     font-style: italic;
   }
 
   .p3-ganesh {
     font-size: 12px; letter-spacing: 1px;
-    margin-bottom: 7mm; color: #444;
+    margin-bottom: 4mm; color: #444;
     font-style: italic;
   }
 
   .p3-title {
     font-family: 'Parisienne', cursive;
-    font-size: 42px; line-height: 1.1;
+    font-size: 40px; line-height: 1.1;
     font-style: normal;
-    margin-bottom: 6mm;
+    margin-bottom: 4mm;
   }
 
   .p3-tagline {
-    font-size: 13.5px; line-height: 2;
-    margin-bottom: 2mm;
+    font-size: 15px; line-height: 1.8;
+    margin-bottom: 1mm;
   }
 
   .p3-name {
     font-family: 'Parisienne', cursive;
-    font-size: 38px; line-height: 1.15;
+    font-size: 36px; line-height: 1.15;
     font-style: normal;
-    margin: 3mm 0 1mm;
+    margin: 2mm 0 1mm;
   }
 
   .p3-parentage {
-    font-size: 12.5px; line-height: 1.6;
-    margin: 0 0 3mm; color: #333;
+    font-size: 13px; line-height: 1.5;
+    margin: 0 0 2mm; color: #333;
   }
 
   .p3-transition {
-    font-size: 13.5px; line-height: 1.8;
-    margin: 2mm 0;
+    font-size: 15px; line-height: 1.7;
+    margin: 1mm 0;
   }
 
   .p3-invite {
-    font-size: 13.5px; line-height: 2;
-    margin: 3mm 0 1mm;
+    font-size: 15px; line-height: 1.8;
+    margin: 2mm 0 1mm;
   }
 
   .p3-divider {
     border: none; border-top: 1px solid #bbb;
-    width: 55%; margin: 5mm 0;
+    width: 55%; margin: 4mm 0;
   }
 
   .p3-events {
-    font-size: 13px; line-height: 2.1;
+    font-size: 14px; line-height: 2;
   }
 
   .p3-venue-label {
-    font-size: 13px; margin: 4mm 0 1mm;
+    font-size: 13px; margin: 3mm 0 1mm;
     letter-spacing: 0.5px;
   }
 
   .p3-venue-name {
     font-family: 'Parisienne', cursive;
-    font-size: 28px; line-height: 1.2;
+    font-size: 26px; line-height: 1.2;
     font-style: normal;
     margin-bottom: 1mm;
   }
 
   .p3-venue-addr {
-    font-size: 13px; margin-bottom: 5mm;
+    font-size: 14px; margin-bottom: 3mm;
   }
 
   .p3-hosts {
-    font-size: 13px; line-height: 1.9;
+    font-size: 14px; line-height: 1.75;
     margin: 2mm 0;
   }
 
   .p3-rsvp-line {
-    font-family: 'IM Fell English', serif;
-    font-size: 13px; margin-top: 5mm;
+    font-family: 'Parisienne', cursive;
+    font-size: 13px; margin-top: 3mm;
     font-style: normal;
   }
 </style>
