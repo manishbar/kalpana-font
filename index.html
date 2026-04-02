@@ -205,7 +205,7 @@
      PAGE 3 – ENGLISH (narrative)
   ═══════════════════════════════ */
   .page-3 {
-    padding: 10mm 11mm;
+    padding: 10mm 12mm;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,80 +216,96 @@
   .p3-card {
     border: 1.5px solid #111;
     width: 100%;
-    padding: 10mm 16mm;
+    padding: 10mm 16mm 12mm;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .p3-ganesh   { font-size: 14px; letter-spacing: 1.5px; margin-bottom: 5mm; }
+  /* all body text: IM Fell English italic, 13.5px */
+  .p3-card p, .p3-card div:not(.p3-title):not(.p3-name):not(.p3-venue-name) {
+    font-style: italic;
+  }
+
+  .p3-ganesh {
+    font-size: 12px; letter-spacing: 1px;
+    margin-bottom: 7mm; color: #444;
+    font-style: italic;
+  }
 
   .p3-title {
     font-family: 'Parisienne', cursive;
-    font-size: 44px; line-height: 1.2;
-    margin-bottom: 4mm;
+    font-size: 42px; line-height: 1.1;
+    font-style: normal;
+    margin-bottom: 6mm;
   }
 
   .p3-tagline {
-    font-style: italic; font-size: 14px;
-    line-height: 1.9; margin-bottom: 5mm;
+    font-size: 13.5px; line-height: 2;
+    margin-bottom: 2mm;
   }
 
   .p3-name {
     font-family: 'Parisienne', cursive;
-    font-size: 40px; line-height: 1.2;
-    margin: 1mm 0;
+    font-size: 38px; line-height: 1.15;
+    font-style: normal;
+    margin: 3mm 0 1mm;
   }
 
   .p3-parentage {
-    font-style: italic; font-size: 13px;
-    margin: 2mm 0 4mm;
+    font-size: 12.5px; line-height: 1.6;
+    margin: 0 0 3mm; color: #333;
   }
 
   .p3-transition {
-    font-style: italic; font-size: 14px;
-    line-height: 1.8; margin: 3mm 0;
+    font-size: 13.5px; line-height: 1.8;
+    margin: 2mm 0;
   }
 
   .p3-invite {
-    font-style: italic; font-size: 14px;
-    line-height: 1.9; margin: 4mm 0;
+    font-size: 13.5px; line-height: 2;
+    margin: 3mm 0 1mm;
   }
-  .p3-ceremony { font-family: 'Parisienne', cursive; font-size: 20px; font-style: normal; }
 
-  .p3-events-grid {
-    font-size: 14px; line-height: 2.2;
-    margin: 4mm 0;
-    text-align: center;
-    font-style: italic;
+  .p3-divider {
+    border: none; border-top: 1px solid #bbb;
+    width: 55%; margin: 5mm 0;
   }
-  .p3-events-grid strong { font-style: normal; }
+
+  .p3-events {
+    font-size: 13px; line-height: 2.1;
+  }
 
   .p3-venue-label {
-    font-style: italic;
-    font-size: 14px; margin: 4mm 0 1mm;
+    font-size: 13px; margin: 4mm 0 1mm;
+    letter-spacing: 0.5px;
   }
+
   .p3-venue-name {
-    font-style: normal; font-weight: bold;
-    font-size: 20px; letter-spacing: 3px;
-    text-transform: uppercase; margin-bottom: 1mm;
+    font-family: 'Parisienne', cursive;
+    font-size: 28px; line-height: 1.2;
+    font-style: normal;
+    margin-bottom: 1mm;
   }
+
   .p3-venue-addr {
-    font-style: italic; font-size: 14px;
-    margin-bottom: 5mm;
+    font-size: 13px; margin-bottom: 5mm;
   }
 
   .p3-hosts {
-    font-style: italic; font-size: 14px;
-    line-height: 1.7; margin: 3mm 0;
+    font-size: 13px; line-height: 1.9;
+    margin: 2mm 0;
   }
 
   .p3-rsvp-line {
-    font-style: italic; font-size: 14px;
-    margin-top: 4mm;
+    font-size: 13px; margin-top: 5mm;
   }
-  .p3-rsvp-label { font-family: 'Parisienne', cursive; font-size: 22px; }
+
+  .p3-rsvp-label {
+    font-family: 'Parisienne', cursive;
+    font-size: 21px; font-style: normal;
+  }
 </style>
 </head>
 <body>
@@ -427,49 +443,52 @@
 
   <div class="p3-card">
 
-    <p class="p3-ganesh">!! Shree Ganeshay Namah !!</p>
+    <p class="p3-ganesh">॥ Shree Ganeshay Namah ॥</p>
 
     <div class="p3-title">Wedding</div>
 
     <p class="p3-tagline">
-      <em>With new dreams, new hopes, new aspirations</em><br>
-      <em>and a desire to achieve new horizons, our beloved daughter</em>
+      With joy in our hearts and blessings of our elders,<br>
+      we joyfully announce the wedding of our beloved daughter
     </p>
 
     <div class="p3-name">Sudeshna</div>
 
     <p class="p3-parentage">
-      <em>(d/o. Mr. Ashish Chakrabory &amp; Late Mrs. Mousumi Chakraborty)</em>
+      (d/o. Mr. Ashish Chakraborty &amp; Late Mrs. Mousumi Chakraborty)
     </p>
 
     <p class="p3-transition">
-      <em>is entering a new phase of life of togetherness with</em>
+      who is to be wed to
     </p>
 
     <div class="p3-name">Manish</div>
 
     <p class="p3-parentage">
-      <em>(s/o. Late Suresh Barman &amp; Smt. Bindu Barman)</em>
+      (s/o. Late Mr. Suresh Barman &amp; Smt. Bindu Barman)
     </p>
 
     <p class="p3-invite">
-      <em>on this occasion we heartily invite you to grace</em><br>
-      <em>the <span class="p3-ceremony">Wedding Ceremony</span> and bless the couple.</em><br>
-      <em>on Sunday, 3rd May 2026</em>
+      We warmly invite you to grace the occasion,<br>
+      shower your blessings on the couple,<br>
+      and celebrate with us on <strong style="font-style:italic;">Sunday, 3rd May 2026</strong>
     </p>
 
-    <div class="p3-events-grid">
-      <strong>Briddhi :</strong> 2nd May, 10:00 a.m. &nbsp;&nbsp;&nbsp; <strong>Sangeet :</strong> 2nd May, 7:00 p.m.<br>
-      <strong>Haldi :</strong> 3rd May, 8:00 a.m. &nbsp;&nbsp;&nbsp; <strong>Wedding :</strong> 3rd May, 6:00 p.m.
+    <hr class="p3-divider">
+
+    <div class="p3-events">
+      Briddhi &nbsp;·&nbsp; 2nd May, 10:00 a.m. &emsp; Sangeet &nbsp;·&nbsp; 2nd May, 7:00 p.m.<br>
+      Haldi &nbsp;·&nbsp; 3rd May, 8:00 a.m. &emsp;&emsp; Wedding &nbsp;·&nbsp; 3rd May, 6:00 p.m.
     </div>
 
-    <p class="p3-venue-label">-: Venue :-</p>
-    <p class="p3-venue-name">" UNITED CLUB "</p>
+    <hr class="p3-divider">
+
+    <p class="p3-venue-label">— Venue —</p>
+    <div class="p3-venue-name">United Club</div>
     <p class="p3-venue-addr">C Road, Bistupur, Gate No. 5, Jamshedpur</p>
 
     <div class="p3-hosts">
-      Mr. Ashish Chakrabory<br>
-      his sister Mrs. Ruma Chakraborty<br>
+      Mr. Ashish Chakraborty &amp; his sister Mrs. Ruma Chakraborty<br>
       &amp; The Entire Chakraborty Family
     </div>
 
