@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation – Manish &amp; Sudeshna (Groom's Side)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Kalpana';
+    src: url('Kalpana%20UNICODE.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { background: #bbb; font-family: 'IM Fell English', serif; color: #111; }
+
+  .page {
+    width: 8in;
+    height: 8in;
+    background: #fff;
+    margin: 16px auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media print {
+    @page { size: 8in 8in; margin: 0; }
+    body  { background: #fff; }
+    .page {
+      margin: 0;
+      width: 8in;
+      height: 8in;
+      page-break-after: always;
+      overflow: hidden;
+    }
+    .page:last-child { page-break-after: auto; }
+  }
+
+  /* PAGE 1 – BENGALI COVER */
+  .page-1 {
+    padding: 6mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .p1-addr {
+    position: absolute;
+    top: 42mm; left: 0;
+    width: 28mm; height: 55mm;
+    border: 1.5px solid #111;
+    border-left: none;
+    background: #fff;
+    z-index: 2;
+  }
+
+  .p1-card {
+    border: 1.5px solid #111;
+    width: 100%;
+    height: calc(8in - 12mm);
+    padding: 8mm 12mm;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+
+  .p1-card::after {
+    content: '';
+    position: absolute;
+    top: -1px; right: -1px;
+    width: 22mm; height: 22mm;
+    border-bottom-left-radius: 100%;
+    border-bottom: 1.5px solid #111;
+    border-left:   1.5px solid #111;
+    background: #fff;
+    z-index: 1;
+  }
+
+  .p1-sym  { font-size: 28px; line-height: 1.3; font-family: 'Kalpana', serif; font-weight: 700; letter-spacing: 2px; }
+  .p1-groom { font-family: 'Kalpana', serif; font-size: 44px; font-weight: 700; line-height: 1.15; }
+  .p1-sep   { font-size: 13px; letter-spacing: 6px; color: #555; font-family: 'Kalpana', serif; }
+  .p1-bride { font-family: 'Kalpana', serif; font-size: 44px; font-weight: 700; line-height: 1.15; }
+  .p1-hr    { border: none; border-top: 1.5px solid #111; width: 100%; margin: 1mm 0; }
+  .p1-poem  { font-family: 'Kalpana', serif; font-size: 17px; line-height: 2; text-align: center; }
+  .p1-attrib { font-family: 'Kalpana', serif; font-size: 16px; font-weight: 700; align-self: flex-end; }
+
+  /* PAGE 2 – BENGALI DETAILS */
+  .page-2 {
+    padding: 6mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .p2-card {
+    border: 1.5px solid #111;
+    width: 100%;
+    padding: 5mm 8mm;
+    font-family: 'Kalpana', serif;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+    overflow: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .p2-header { display: flex; justify-content: space-between; align-items: flex-start; font-size: 12px; line-height: 1.7; }
+  .p2-hcol       { flex: 1; }
+  .p2-hcol-right { text-align: right; }
+  .p2-hcol-mid   { flex: 0.85; text-align: center; }
+  .p2-parichiti  { font-size: 13px; font-weight: 700; }
+  .p2-mid-sym    { font-size: 24px; }
+
+  .p2-praj-row  { display: flex; align-items: center; justify-content: center; }
+  .p2-praj-text { font-size: 14px; font-weight: 700; }
+
+  .p2-deco-line { text-align: center; font-size: 12px; letter-spacing: 4px; color: #555; font-family: 'Kalpana', serif; }
+  .p2-hridaya   { text-align: center; font-size: 12px; line-height: 1.9; }
+  .p2-salutation { font-size: 12px; line-height: 1.7; }
+  .p2-body      { font-size: 12px; line-height: 1.8; text-align: left; }
+  .p2-sig       { display: flex; justify-content: space-between; font-size: 12px; line-height: 1.7; }
+  .p2-sch-title { text-align: center; font-size: 13px; font-weight: 700; }
+  .p2-event     { font-size: 12px; line-height: 1.9; text-align: left; }
+  .p2-mobile    { font-size: 12px; text-align: center; font-family: 'Kalpana', serif; }
+
+  /* PAGE 3 – ENGLISH */
+  .page-3 {
+    padding: 5mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'IM Fell English', 'Kalpana', serif;
+    color: #111;
+  }
+
+  .p3-card {
+    border: 1.5px solid #111;
+    width: 100%;
+    height: calc(8in - 10mm);
+    padding: 5mm 10mm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+
+  .p3-card p, .p3-card div:not(.p3-title):not(.p3-name):not(.p3-venue-name) { font-style: italic; }
+
+  .p3-ganesh    { font-size: 10px; letter-spacing: 1px; color: #444; font-style: italic; }
+  .p3-title     { font-family: 'Tangerine', cursive; font-weight: 700; font-size: 52px; line-height: 1.1; font-style: normal; }
+  .p3-tagline   { font-size: 12px; line-height: 1.6; }
+  .p3-name      { font-family: 'Tangerine', cursive; font-weight: 700; font-size: 48px; line-height: 1.1; font-style: normal; }
+  .p3-parentage { font-size: 11px; line-height: 1.3; color: #333; }
+  .p3-transition{ font-size: 12px; line-height: 1.4; }
+  .p3-invite    { font-size: 12px; line-height: 1.6; }
+  .p3-divider   { border: none; border-top: 1px solid #bbb; width: 55%; margin: 0; }
+  .p3-events    { font-family: 'Kalpana', serif; font-size: 12px; line-height: 1.8; }
+  .p3-venue-label { font-size: 11px; letter-spacing: 0.5px; }
+
+  .p3-venues-grid  { display: flex; gap: 6mm; width: 100%; justify-content: center; }
+  .p3-venue-block  { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .p3-venue-date   { font-family: 'Kalpana', serif; font-size: 12px; font-style: normal; color: #111; }
+  .p3-venue-name   { font-family: 'Tangerine', cursive; font-weight: 700; font-size: 32px; line-height: 1.1; font-style: normal; }
+  .p3-venue-addr   { font-size: 11px; line-height: 1.4; }
+  .p3-hosts        { font-size: 11.5px; line-height: 1.6; }
+  .p3-rsvp-line    { font-family: 'Kalpana', serif; font-size: 12px; font-style: normal; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — Bengali Cover (Groom's Side) -->
+<div class="page page-1">
+
+  <div class="p1-addr"></div>
+
+  <div class="p1-card">
+
+    <div class="p1-sym">শুভ পরিণয়</div>
+
+    <div class="p1-groom">মনীষ</div>
+
+    <div class="p1-sep">— ✦ —</div>
+
+    <div class="p1-bride">সুদেষ্ণা</div>
+
+    <hr class="p1-hr">
+    <hr class="p1-hr">
+
+    <p class="p1-poem">
+      "নতুন পথের যাত্রী দুটি<br>
+      ছুটেছে কিসের সন্ধানে<br>
+      যোগ করে দাও, এক করে দাও,<br>
+      হলদে সুতোর বন্ধনে।"
+    </p>
+    <div class="p1-attrib">রবীন্দ্রনাথ ঠাকুর</div>
+
+  </div>
+</div>
+
+
+<!-- PAGE 2 — Bengali Details (Groom's Side) -->
+<div class="page page-2">
+
+  <div class="p2-card">
+
+    <div class="p2-header">
+      <div class="p2-hcol">
+        পাত্র পক্ষ :<br>
+        কল্যাণীয় <strong>মনীষ বর্মন</strong><br>
+        পিতা : স্বর্গীয় সুরেশ বর্মন<br>
+        মাতা : শ্রীমত্যা বিন্দু বর্মন
+      </div>
+      <div class="p2-hcol-mid">
+        <div class="p2-parichiti">।। পরিচিতি ।।</div>
+        <div class="p2-mid-sym">𑁍</div>
+      </div>
+      <div class="p2-hcol p2-hcol-right">
+        পাত্রী পক্ষ :<br>
+        কল্যাণীয়া <strong>সুদেষ্ণা চক্রবর্তী</strong><br>
+        পিতা : শ্রী আশিষ চক্রবর্তী<br>
+        মাতা : স্বর্গীয়া মৌসুমী চক্রবর্তী
+      </div>
+    </div>
+
+    <div class="p2-praj-row">
+      <span class="p2-praj-text">।। শ্রী শ্রী প্রজাপতয়ে নমঃ ।।</span>
+    </div>
+
+    <div class="p2-deco-line">— ✦ ✦ ✦ —</div>
+
+    <div class="p2-hridaya">
+      ।। যদিদং হৃদয়ং মম ।।<br>
+      ।। তদিদং হৃদয়ং তব ।।
+    </div>
+
+    <div class="p2-salutation">
+      সবিনয় নিবেদন,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;মহাশয়/মহাশয়া
+    </div>
+
+    <div class="p2-body">
+      প্রজাপতি ঋষির আশির্বাদে মাঙ্গলিক সানাইয়ের সুরে সুর মিলিয়ে পবিত্র বেদমন্ত্র উচ্চারণের মধ্য দিয়ে দুটি সবুজ প্রাণ হলুদ সুতোর বন্ধনে আবদ্ধ হয়ে রঙিন স্বপ্নকে পূরণ করতে চলেছে।
+    </div>
+
+    <div class="p2-body">
+      আগামী ১৯ শে বৈশাখ, ১৪৩৩ (ইং ৩ রা মে, ২০২৬) রবিবার শ্রীমত্যা বিন্দু বর্মন এর কনিষ্ঠ পুত্র কল্যাণীয় <strong>মনীষ</strong> -এর সহিত স্বর্গীয়া মৌসুমী চক্রবর্তী ও শ্রী আশিষ চক্রবর্তীর আদরের জ্যেষ্ঠা কন্যা কল্যাণীয়া <strong>সুদেষ্ণা</strong> -র শুভ পরিণয় সুসম্পূর্ণ হইবে।
+    </div>
+
+    <div class="p2-body">
+      আপনার / আপনাদের সপরিবারে সহৃদয় উপস্থিতি কামনা করি।
+    </div>
+
+    <div class="p2-body">
+      ইতি – বিনীত<br>
+      শ্রীমত্যা বিন্দু বর্মন
+    </div>
+
+    <div class="p2-sig">
+      <div>
+        দর্শনাভিলাষী<br>
+        বর্মন পরিবার
+      </div>
+    </div>
+
+    <div class="p2-body" style="text-align:center; font-style:italic;">
+      পত্র দ্বারা নিমন্ত্রণের ত্রুটি মার্জনীয়।
+    </div>
+
+    <div class="p2-sch-title">।। অনুষ্ঠান সূচী ।।</div>
+
+    <div class="p2-event">
+      <strong>বৃদ্ধি :</strong> ১৮ ই বৈশাখ, ১৪৩৩ (ইং ২ রা মে, ২০২৬) শনিবার, সকাল ১০ ঘটিকায়
+    </div>
+    <div class="p2-event">
+      <strong>সঙ্গীত সন্ধ্যা :</strong> ১৮ ই বৈশাখ, ১৪৩৩ (ইং ২ রা মে, ২০২৬) শনিবার, সন্ধ্যা ৭ ঘটিকায়
+    </div>
+    <div class="p2-event">
+      <strong>স্থান (২ রা মে) :</strong> ৮ নং জোন, বাড়ি নং ১০, সুঘনা কলোনি, টিউব কলোনির নিকট, বারিডি — ৮৩১০১৭
+    </div>
+    <div class="p2-event" style="margin-top:3px;">
+      <strong>স্থান (৩ রা মে) :</strong> ইউনাইটেড ক্লাব, সি রোড, বিষ্টুপুর, গেট নং ৫, জামশেদপুর
+    </div>
+    <div class="p2-mobile">মোবাইল : 7061188602 / 7992346824 / 7992351075</div>
+
+  </div>
+</div>
+
+
+<!-- PAGE 3 — English (Groom's Side) -->
+<div class="page page-3">
+
+  <div class="p3-card">
+
+    <p class="p3-ganesh">॥ Shree Ganeshaya Namah ॥</p>
+
+    <div class="p3-title">Wedding</div>
+
+    <p class="p3-tagline">
+      With joy in our hearts and blessings of our elders,<br>
+      we joyfully announce the wedding of our beloved son
+    </p>
+
+    <div class="p3-name">Manish</div>
+
+    <p class="p3-parentage">
+      (s/o. Late Mr. Suresh Barman &amp; Smt. Bindu Barman)
+    </p>
+
+    <p class="p3-transition">
+      who is to be wed to
+    </p>
+
+    <div class="p3-name">Sudeshna</div>
+
+    <p class="p3-parentage">
+      (d/o. Mr. Ashish Chakraborty &amp; Late Mrs. Mousumi Chakraborty)
+    </p>
+
+    <p class="p3-invite">
+      We warmly invite you to grace the occasion,<br>
+      shower your blessings on the couple,<br>
+      and celebrate with us on <strong style="font-style:italic;">Sunday, 3rd May 2026</strong>
+    </p>
+
+    <hr class="p3-divider">
+
+    <div class="p3-events">
+      Briddhi &nbsp;·&nbsp; 2nd May, 10:00 a.m. &emsp; Sangeet &nbsp;·&nbsp; 2nd May, 7:00 p.m.<br>
+      Haldi &nbsp;·&nbsp; 3rd May, 8:00 a.m. &emsp;&emsp; Wedding &nbsp;·&nbsp; 3rd May, 6:00 p.m.
+    </div>
+
+    <hr class="p3-divider">
+
+    <p class="p3-venue-label">— Venues —</p>
+    <div class="p3-venues-grid">
+      <div class="p3-venue-block">
+        <div class="p3-venue-date">2nd May</div>
+        <div class="p3-venue-name">Residence</div>
+        <p class="p3-venue-addr">8 No. Zone, House No. 10, Sughna Colony,<br>Near Tube Colony, Baridih – 831017</p>
+      </div>
+      <div class="p3-venue-block">
+        <div class="p3-venue-date">3rd May</div>
+        <div class="p3-venue-name">United Club</div>
+        <p class="p3-venue-addr">C Road, Bistupur, Gate No. 5, Jamshedpur</p>
+      </div>
+    </div>
+
+    <div class="p3-hosts">
+      Smt. Bindu Barman &amp; The Entire Barman Family
+    </div>
+
+    <p class="p3-rsvp-line">
+      R.S.V.P. : 7061188602 / 7992346824 / 7992351075
+    </p>
+
+  </div>
+</div>
+
+</body>
+</html>
