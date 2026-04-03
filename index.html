@@ -45,54 +45,64 @@
      PAGE 1 – BENGALI COVER
   ═══════════════════════════════ */
   .page-1 {
-    padding: 6mm;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
-  .p1-addr {
-    position: absolute;
-    top: 42mm; left: 0;
-    width: 28mm; height: 55mm;
-    border: 1.5px solid #111;
-    border-left: none;
-    background: #fff;
-    z-index: 2;
-  }
+  .p1-addr { display: none; }
 
+  /* Arch / mandap frame matching the physical card window */
   .p1-card {
-    border: 1.5px solid #111;
-    width: 100%;
-    height: calc(6in - 12mm);
-    padding: 8mm 12mm;
+    width: 68%;
+    height: 88%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
+    padding: 13% 6mm 6mm;
+    /* Arch shape: rounded top, straight sides */
+    border-left:   2px solid #111;
+    border-right:  2px solid #111;
+    border-bottom: 2px solid #111;
+    border-top: none;
   }
 
-  .p1-card::after {
+  /* Arch top — two overlapping pseudo-elements form the rounded arch */
+  .p1-card::before {
     content: '';
     position: absolute;
-    top: -1px; right: -1px;
-    width: 22mm; height: 22mm;
-    border-bottom-left-radius: 100%;
-    border-bottom: 1.5px solid #111;
-    border-left:   1.5px solid #111;
-    background: #fff;
-    z-index: 1;
+    top: -1px; left: -2px;
+    width: calc(100% + 4px);
+    height: 45%;
+    border: 2px solid #111;
+    border-bottom: none;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    pointer-events: none;
   }
 
-  .p1-sym      { font-size: 28px; line-height: 1.3; font-family: 'Kalpana', serif; font-weight: 700; letter-spacing: 2px; }
+  .p1-card::after { content: none; }
+
+  /* Inner decorative arch line */
+  .p1-inner-arch {
+    position: absolute;
+    top: 4px; left: 4px;
+    width: calc(100% - 8px);
+    height: calc(45% + 4px);
+    border: 1px solid #888;
+    border-bottom: none;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    pointer-events: none;
+  }
+
+  .p1-sym      { font-size: 22px; line-height: 1.3; font-family: 'Kalpana', serif; font-weight: 700; letter-spacing: 2px; }
 
   .p1-bride {
     font-family: 'Kalpana', serif;
     font-size: 44px; font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.1;
   }
 
   .p1-sep { font-size: 13px; letter-spacing: 6px; color: #555; font-family: 'Kalpana', serif; }
@@ -100,20 +110,20 @@
   .p1-groom {
     font-family: 'Kalpana', serif;
     font-size: 44px; font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.1;
   }
 
-  .p1-hr { border: none; border-top: 1.5px solid #111; width: 100%; margin: 1mm 0; }
+  .p1-hr { border: none; border-top: 1.5px solid #111; width: 80%; margin: 0; }
 
   .p1-poem {
     font-family: 'Kalpana', serif;
-    font-size: 17px; line-height: 2;
+    font-size: 15px; line-height: 1.9;
     text-align: center;
   }
 
   .p1-attrib {
     font-family: 'Kalpana', serif;
-    font-size: 16px; font-weight: 700;
+    font-size: 13px; font-weight: 700;
     align-self: flex-end;
   }
 
@@ -345,9 +355,8 @@
 ═══════════════════════════════════════════════ -->
 <div class="page page-1">
 
-  <div class="p1-addr"></div>
-
   <div class="p1-card">
+    <div class="p1-inner-arch"></div>
 
     <div class="p1-sym">শুভ পরিণয়</div>
 
