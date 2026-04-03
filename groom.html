@@ -20,7 +20,7 @@
   body { background: #bbb; font-family: 'Shobhika', serif; color: #111; }
 
   .page {
-    width: 8in;
+    width: 6in;
     height: 8in;
     background: #fff;
     margin: 16px auto;
@@ -29,11 +29,11 @@
   }
 
   @media print {
-    @page { size: 8in 8in; margin: 0; }
+    @page { size: 6in 8in; margin: 0; }
     body  { background: #fff; }
     .page {
       margin: 0;
-      width: 8in;
+      width: 6in;
       height: 8in;
       page-break-after: always;
       overflow: hidden;
@@ -43,7 +43,7 @@
 
   /* PAGE 1 – BENGALI COVER */
   .page-1 {
-    padding: 6mm;
+    padding: 6mm 12mm;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,7 +95,7 @@
 
   /* PAGE 2 – BENGALI DETAILS */
   .page-2 {
-    padding: 6mm;
+    padding: 6mm 12mm;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,7 +137,7 @@
 
   /* PAGE 3 – HINDI */
   .page-3 {
-    padding: 5mm;
+    padding: 5mm 12mm;
     display: flex;
     flex-direction: column;
     align-items: center;
