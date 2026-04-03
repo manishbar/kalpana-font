@@ -19,12 +19,13 @@
 
   body { background: #A0001C; font-family: 'Shobhika', serif; color: #F5E6C8; }
 
-  /* ── 8×6 LANDSCAPE — prints DIRECTLY on red card stock ── */
-  /* Background TRANSPARENT so red paper shows through; text is light cream/gold */
+  /* ── 8×6 LANDSCAPE — red background prints on white paper ── */
   .page {
     width: 8in;
     height: 6in;
-    background: transparent;
+    background: #A0001C;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
     margin: 16px auto;
     position: relative;
     overflow: hidden;
@@ -45,7 +46,7 @@
 
   @media print {
     @page { size: 8in 6in; margin: 0; }
-    body  { background: transparent; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body  { background: #A0001C; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page {
       margin: 0;
       width: 8in;
